@@ -1,9 +1,21 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gcherqui <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/06 20:29:51 by gcherqui          #+#    #+#             */
+/*   Updated: 2022/11/06 20:30:41 by gcherqui         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
+#include "libft.h"
+
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -15,7 +27,7 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 		j++;
 	}
 	dst[i + j] = 0;
-	while(src[j])
+	while (src[j])
 		j++;
-	return(i + j);
+	return (i + j);
 }

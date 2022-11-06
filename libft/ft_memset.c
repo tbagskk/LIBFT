@@ -1,6 +1,19 @@
-void ft_memset(void *b, int c, size_t len)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gcherqui <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/06 20:25:04 by gcherqui          #+#    #+#             */
+/*   Updated: 2022/11/06 21:00:23 by gcherqui         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include "libft.h"
+
+void	*ft_memset(void *b, int c, size_t len)
 {
-	char *str
+	char	*str;
 
 	str = b;
 	while (len)
@@ -9,5 +22,5 @@ void ft_memset(void *b, int c, size_t len)
 		str++;
 		len--;
 	}
-	return(b);
+	return (b);
 }
