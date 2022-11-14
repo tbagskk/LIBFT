@@ -6,7 +6,7 @@
 /*   By: gcherqui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 20:21:28 by gcherqui          #+#    #+#             */
-/*   Updated: 2022/11/06 20:22:44 by gcherqui         ###   ########.fr       */
+/*   Updated: 2022/11/13 20:53:32 by gcherqui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	a = (char *)dst;
 	b = (char *)src;
 	i = 0;
+	if (!dst && !src)
+		return (NULL);
 	if (a > b)
 	{
 		while (len--)

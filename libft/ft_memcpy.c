@@ -6,7 +6,7 @@
 /*   By: gcherqui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 20:16:55 by gcherqui          #+#    #+#             */
-/*   Updated: 2022/11/06 20:20:32 by gcherqui         ###   ########.fr       */
+/*   Updated: 2022/11/13 20:51:01 by gcherqui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	char	*a;
 
+	if (!dst && !src)
+		return (NULL);
 	a = (char *)dst;
 	while (n--)
 	{

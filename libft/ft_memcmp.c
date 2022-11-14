@@ -6,7 +6,7 @@
 /*   By: gcherqui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 20:04:17 by gcherqui          #+#    #+#             */
-/*   Updated: 2022/11/06 20:15:58 by gcherqui         ###   ########.fr       */
+/*   Updated: 2022/11/13 21:00:05 by gcherqui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,7 @@ int	ft_memcmp(const void *s, const void *c, size_t n)
 	{
 		i++;
 	}
+	if (i == n)
+		return (0);
 	return (a[i] - b[i]);
 }
-/*
-int main()
-{
-    char caca[] = "abcdef";
-    char maison[] ="mdjdj";
-    int bb = ft_memcmp(caca,maison,6);
-    printf("%d",bb);
-}*/
