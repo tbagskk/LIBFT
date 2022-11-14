@@ -6,7 +6,7 @@
 /*   By: gcherqui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 20:38:32 by gcherqui          #+#    #+#             */
-/*   Updated: 2022/11/06 20:41:03 by gcherqui         ###   ########.fr       */
+/*   Updated: 2022/11/14 18:50:31 by gcherqui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -23,7 +23,7 @@ int	nbr(int tab)
 	}
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	result;
@@ -35,15 +35,14 @@ int	ft_atoi(char *str)
 	while (str[i] == '\f' || str[i] == '\n'
 		|| str[i] == '\r' || str[i] == '\t'
 		|| str[i] == '\v' || str[i] == ' ')
+		i++;
+	if (str[i] == '-')
 	{
+		sign = -1;
 		i++;
 	}
-	while (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-				sign *= -1;
+	else if (str[i] == '+')
 		i++;
-	}
 	while (nbr(str[i]))
 	{
 			result = result * 10 + str[i] - '0';
