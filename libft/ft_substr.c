@@ -14,11 +14,13 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		i;
-	size_t	size;
-	char	*tab;
+	size_t		i;
+	size_t		size;
+	char		*tab;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	size = ft_strlen(s);
 	if (start >= size)
 		len = 0;

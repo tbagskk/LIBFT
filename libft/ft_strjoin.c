@@ -16,8 +16,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	size;
 	char	*tab;
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	j;
 
 	if (s1 && s2)
 	{
@@ -38,4 +38,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	tab[i] = 0;
 		return (tab);
 	}
+	return (NULL);
 }

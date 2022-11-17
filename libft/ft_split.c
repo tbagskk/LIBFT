@@ -14,19 +14,13 @@
 #include "libft.h"
 #include <stdio.h>
 
-int	ft_charset(const char *str, char charset)
-{
-	if (charset == *str)
-		return (1);
-	return (0);
-}
-
 int	ft_word(const char *str, char charset)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] && !(ft_charset(str + i, charset)))
+	while (str[i]
+		&& (str[i] != charset))
 		i++;
 	return (i);
 }
@@ -40,7 +34,7 @@ int	ft_nbr(const char *str, char charset)
 	a = 0;
 	while (*str)
 	{
-		while (*str && ft_charset(str, charset))
+		while (*str && *str == charset)
 			str++;
 		i = ft_word(str, charset);
 		str += i;
@@ -63,6 +57,17 @@ char	*ft_copy(const char *src, int a)
 	return (tab);
 }
 
+char	**ft_free(char **tab, int length)
+{
+	int	i;
+
+	i = 0;
+	while (i < length)
+		free(tab[i++]);
+	free(tab);
+	return (0);
+}
+
 char	**ft_split(const char *s, char c)
 {
 	char	**tab;
@@ -70,6 +75,8 @@ char	**ft_split(const char *s, char c)
 	int		i;
 	int		n;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	size = ft_nbr(s, c);
 	tab = malloc(sizeof(char *) * (size + 1));
@@ -78,14 +85,23 @@ char	**ft_split(const char *s, char c)
 		return (NULL);
 	while (++i < size)
 	{
-		while (*s && ft_charset(s, c))
+		while (*s && *s == c)
 			s++;
 		n = ft_word(s, c);
 		tab[i] = ft_copy(s, n);
 		if (!tab[i])
-			return (NULL);
+			return (ft_free(tab, i));
 		s += n;
 	}
 	tab[size] = 0;
 	return (tab);
 }
+
+/*
+int main()
+{
+	char caca[] = "alexandre aime dustin";
+	char **tamer = ft_split(caca, ' ');
+	printf("%s",tamer[1]);
+}
+*/
